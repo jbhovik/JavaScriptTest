@@ -4,7 +4,7 @@ var myWindows;
 
 createLinuxOs = function(){
   if (myLinux instanceof Os === false) {
-    myLinux = new Linux('Linux is open source!', 'Tux the penguin');
+    myLinux = new Linux('Linux is open source!', 'Tux the Linux penguin.');
   }
 }
 
@@ -18,7 +18,7 @@ printLinuxMascot = function(){
 
 createMacOs = function(){
   if (myMac instanceof Os === false) {
-    myMac = new Mac('Think different', 'Behold the Apple Watch!');
+    myMac = new Mac('Think different.', 'Behold the Apple Watch!');
   }
 }
 
