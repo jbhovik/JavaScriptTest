@@ -3,20 +3,52 @@
   <body>
     <h1>Welcome to the OS maker!</h1>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="js/Os.js"></script>
     <script type="text/javascript" src="js/Linux.js"></script>
     <script type="text/javascript" src="js/Mac.js"></script>
     <script type="text/javascript" src="js/Windows.js"></script>
     <script type="text/javascript" src="js/OsMaker.js"></script>
+    <script>
+      jQuery(document).ready(function(){
+        jQuery('#bootLinux').on('click', function(event) {        
+          jQuery('#linuxContent').toggle('show');
+        });
+      });
+      jQuery(document).ready(function(){
+        jQuery('#bootMac').on('click', function(event) {        
+          jQuery('#macContent').toggle('show');
+        });
+      });
+      jQuery(document).ready(function(){
+        jQuery('#bootWindows').on('click', function(event) {        
+          jQuery('#windowsContent').toggle('show');
+        });
+      });
+    </script>
 
     <div>
-      <button onclick="createLinuxOs()">Boot Linux</button>
+      <button id='bootLinux' onclick="createLinuxOs()">Boot Linux</button>
+      <div id='linuxContent' style="display: none;">
+        <button id='printLinuxMessage' onclick="printLinuxMessage()">Print Linux Slogan</button>
+        <button id='printLinuxMascot' onclick="printLinuxMascot()">Print Linux Attribute</button>
+      </div>
     </div>
+
     <div>
-      <button onclick="createMacOs()">Boot Mac OS</button>
+      <button id='bootMac' onclick="createMacOs()">Boot Mac OS</button>
+      <div id='macContent' style="display: none;">
+        <button id='printMacMessage' onclick="printMacMessage()">Print Mac Slogan</button>
+        <button id='printMacProduct' onclick="printMacAttribute()">Print Mac Product</button>
+      </div>
     </div>
+    
     <div>
-      <button onclick="createWindowsOs()">Boot Windows</button>
+      <button id="bootWindows" onclick="createWindowsOs()">Boot Windows</button>
+      <div id='windowsContent' style="display: none;">
+        <button id="printWindowsMessage" onclick="printWindowsMessage()">Print Windows Slogan</button>
+        <button id="printTheBallmer" onclick="printWindowsStarPlayer()">Print Windows Attribute</button>
+      </div>
     </div>
   </body>
 </html>
