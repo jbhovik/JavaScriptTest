@@ -1,11 +1,12 @@
-function Linux() {
-  this.message = 'Linux message';
-}
-
 Linux.prototype = Object.create(Os.prototype);
 
-Linux.prototype.printLinuxMessage = function(){
-  alert(this.message);
-};
+function Linux(message, mascot) {
+  this.mascot = mascot;
+  Os.call(this, message);
+}
+
+Linux.prototype.printMascot = function(){
+  alert(this.mascot);
+}
 
 

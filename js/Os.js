@@ -1,14 +1,8 @@
-function Os() {
+function Os(message) {
+  this.message = message;
 }
 
-Os.prototype.printParentMessage = function(){
-  alert('The parent message');
-};
-
 Os.prototype.printMessage = function(){
-  alert('The printMessage');
+  alert(this.message);
 };
 
-Os.prototype.printTest = function(){
-  alert('The printTest');
-};
