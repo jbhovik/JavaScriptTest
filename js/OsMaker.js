@@ -5,7 +5,7 @@ var myOs;
 
 createOs = function(){
   if (myOs instanceof Os === false) {
-    myOs = new Os('Welcome to the generic OS!');
+    myOs = new Os('Welcome to the generic OS! I have no attribute.');
   }
 }
 
