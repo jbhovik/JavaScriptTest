@@ -1,6 +1,17 @@
 var myLinux;
 var myMac;
 var myWindows;
+var myOs;
+
+createOs = function(){
+  if (myOs instanceof Os === false) {
+    myOs = new Os('Welcome to the generic OS!');
+  }
+}
+
+printOsMessage = function(){
+  myOs.printMessage();
+}
 
 createLinuxOs = function(){
   if (myLinux instanceof Os === false) {

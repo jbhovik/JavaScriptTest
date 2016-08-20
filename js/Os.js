@@ -5,4 +5,3 @@ function Os(message) {
 Os.prototype.printMessage = function(){
   alert(this.message);
 };
-

@@ -8,5 +8,3 @@ function Linux(message, mascot) {
 Linux.prototype.printMascot = function(){
   alert(this.mascot);
 }
-
-

@@ -11,6 +11,11 @@
     <script type="text/javascript" src="js/OsMaker.js"></script>
     <script>
       jQuery(document).ready(function(){
+        jQuery('#bootOs').on('click', function(event) {        
+          jQuery('#osContent').toggle('show');
+        });
+      });
+      jQuery(document).ready(function(){
         jQuery('#bootLinux').on('click', function(event) {        
           jQuery('#linuxContent').toggle('show');
         });
@@ -26,6 +31,13 @@
         });
       });
     </script>
+
+    <div>
+      <button id='bootOs' onclick="createOs()">Boot Generic OS</button>
+      <div id='osContent' style="display: none;">
+        <button id='printOsMessage' onclick="printOsMessage()">Print Generic OS Slogan</button>
+      </div>
+    </div>
 
     <div>
       <button id='bootLinux' onclick="createLinuxOs()">Boot Linux</button>
