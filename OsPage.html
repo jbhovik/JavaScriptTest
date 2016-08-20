@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Welcome to the OS maker!</h1>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="js/Os.js"></script>
-    <script type="text/javascript" src="js/Linux.js"></script>
-    <script type="text/javascript" src="js/Mac.js"></script>
-    <script type="text/javascript" src="js/Windows.js"></script>
-    <script type="text/javascript" src="js/OsMaker.js"></script>
-    <script>
-      jQuery(document).ready(function(){
-        jQuery('#bootOs').on('click', function(event) {        
-          jQuery('#osContent').toggle('show');
+    <head>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script type="text/javascript" src="js/Os.js"></script>
+      <script type="text/javascript" src="js/Linux.js"></script>
+      <script type="text/javascript" src="js/Mac.js"></script>
+      <script type="text/javascript" src="js/Windows.js"></script>
+      <script type="text/javascript" src="js/OsMaker.js"></script>
+      <script>
+        jQuery(document).ready(function(){
+          jQuery('#bootOs').on('click', function(event) {        
+            jQuery('#osContent').toggle('show');
+          });
+          jQuery('#bootLinux').on('click', function(event) {        
+            jQuery('#linuxContent').toggle('show');
+          });
+          jQuery('#bootMac').on('click', function(event) {        
+            jQuery('#macContent').toggle('show');
+          });
+          jQuery('#bootWindows').on('click', function(event) {        
+            jQuery('#windowsContent').toggle('show');
+          });
         });
-        jQuery('#bootLinux').on('click', function(event) {        
-          jQuery('#linuxContent').toggle('show');
-        });
-        jQuery('#bootMac').on('click', function(event) {        
-          jQuery('#macContent').toggle('show');
-        });
-        jQuery('#bootWindows').on('click', function(event) {        
-          jQuery('#windowsContent').toggle('show');
-        });
-      });
-    </script>
+      </script>
+    </head>
+
+    <h1>Welcome to the OS booter!</h1>
 
     <div>
       <button id='bootOs' onclick="createOs()">Boot Generic OS</button>
