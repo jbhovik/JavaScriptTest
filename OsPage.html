@@ -18,77 +18,59 @@
           var bootOsButton = document.getElementById('bootOs');
           bootOsButton.os = myOs;
           var bootLinuxButton = document.getElementById('bootLinux');
+          var linuxAttrButton = document.getElementById('linuxAttribute');
           bootLinuxButton.os = myLinux;
+          linuxAttrButton.os = myLinux;
           var bootMacButton = document.getElementById('bootMac');
+          var macAttrButton = document.getElementById('macAttribute');
           bootMacButton.os = myMac;
+          macAttrButton.os = myMac;
           var bootWindowsButton = document.getElementById('bootWindows');
+          var windowsAttrButton = document.getElementById('windowsAttribute');
           bootWindowsButton.os = myWindows;
+          windowsAttrButton.os = myWindows;
         }
 
-        function clickButton(id){
-          if (id === 'bootOs'){
-            var bootOsButton = document.getElementById('bootOs');
-          }
-          else if (id === 'bootLinux'){
-            var bootOsButton = document.getElementById('bootLinux');
-          }
-          else if (id === 'bootMac'){
-            var bootOsButton = document.getElementById('bootMac');
-          }
-          else if (id === 'bootWindows'){
-            var bootOsButton = document.getElementById('bootWindows');
-          }
-            bootOsButton.os.printMessage();
+        function displayMessage(id){
+          var bootOsButton = document.getElementById(id);
+          bootOsButton.os.printMessage();
         }
 
-        jQuery(document).ready(function(){
-          jQuery('#bootOs').on('click', function(event) {        
-            jQuery('#osContent').toggle('show');
-          });
-          jQuery('#bootLinux').on('click', function(event) {        
-            jQuery('#linuxContent').toggle('show');
-          });
-          jQuery('#bootMac').on('click', function(event) {        
-            jQuery('#macContent').toggle('show');
-          });
-          jQuery('#bootWindows').on('click', function(event) {        
-            jQuery('#windowsContent').toggle('show');
-          });
-        });
+        function displayAttribute(id){
+          var osAttrButton = document.getElementById(id);
+
+          if (osAttrButton.os instanceof Linux){
+            osAttrButton.os.printMascot();
+          }
+          else if (osAttrButton.os instanceof Mac){
+            osAttrButton.os.showAppleWatch();
+          }
+          else if (osAttrButton.os instanceof Windows){
+            osAttrButton.os.printTheBallmer();
+          }
+        }
       </script>
     </head>
 
     <h1>Welcome to the OS booter!</h1>
 
     <div>
-      <button id='bootOs' onclick="clickButton(id)">Boot Generic OS</button>
-      <div id='osContent' style="display: none;">
-        <button id='printOsMessage' onclick="clickButton()">Print Generic OS Slogan</button>
-      </div>
+      <button id='bootOs' onclick="displayMessage(id)">Boot Generic OS</button>
     </div>
 
     <div>
-      <button id='bootLinux' onclick="clickButton(id)">Boot Linux</button>
-      <div id='linuxContent' style="display: none;">
-        <button id='printLinuxMessage' onclick="clickButton()">Print Linux Slogan</button>
-        <button id='printLinuxMascot' onclick="clickButton()">Print Linux Attribute</button>
-      </div>
+      <button id='bootLinux' onclick="displayMessage(id)">Boot Linux</button>
+      <button id='linuxAttribute' onclick="displayAttribute(id)">Linux Attribute</button>
     </div>
 
     <div>
-      <button id='bootMac' onclick="clickButton(id)">Boot Mac OS</button>
-      <div id='macContent' style="display: none;">
-        <button id='printMacMessage' onclick="clickButton()">Print Mac Slogan</button>
-        <button id='printMacProduct' onclick="clickButton()">Print Mac Attribute</button>
-      </div>
+      <button id='bootMac' onclick="displayMessage(id)">Boot Mac OS</button>
+      <button id='macAttribute' onclick="displayAttribute(id)">Mac Attribute</button>
     </div>
     
     <div>
-      <button id="bootWindows" onclick="clickButton(id)">Boot Windows</button>
-      <div id='windowsContent' style="display: none;">
-        <button id="printWindowsMessage" onclick="clickButton()">Print Windows Slogan</button>
-        <button id="printTheBallmer" onclick="clickButton()">Print Windows Attribute</button>
-      </div>
+      <button id='bootWindows' onclick="displayMessage(id)">Boot Windows</button>
+      <button id='windowsAttribute' onclick="displayAttribute(id)">Windows Attribute</button>
     </div>
   </body>
 </html>
