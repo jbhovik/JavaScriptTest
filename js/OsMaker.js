@@ -15,7 +15,7 @@ printOsMessage = function(){
 
 createLinuxOs = function(){
   if (myLinux instanceof Os === false) {
-    myLinux = new Linux('Linux is open source!', 'Tux the Linux penguin.');
+    myLinux = Linux.create();
   }
 }
 
@@ -29,7 +29,7 @@ printLinuxMascot = function(){
 
 createMacOs = function(){
   if (myMac instanceof Os === false) {
-    myMac = new Mac('Think different.', 'Behold the Apple Watch!');
+    myMac = Mac.create();
   }
 }
 
@@ -43,7 +43,7 @@ printMacAttribute = function(){
 
 createWindowsOs = function(){
   if (myWindows instanceof Os === false) {
-    myWindows = new Windows('We don\'t have a slogan, but we have Xbox!' , 'Others may have a lot, but we\'ve got Steve Ballmer!');
+    myWindows = Windows.create();
   }
 }
 
