@@ -1,19 +1,15 @@
 createOs = function(typeOfOs){
   if (typeOfOs === 'Os') {
-    var myOs = Os.create();
-    return myOs;
+    return Os.create();
   }
   else if (typeOfOs === 'Linux'){
-    var myLinux = Linux.create();
-    return myLinux;
+    return Linux.create();
   }
   else if (typeOfOs === 'Mac'){
-    var myMac = Mac.create();
-    return myMac;
+    return Mac.create();
   }
   else if (typeOfOs === 'Windows'){
-    var myWindows = Windows.create();
-    return myWindows;
+    return Windows.create();
   }
 }
 
