@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <body>
+  <body onload="init()">
     <head>
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script type="text/javascript" src="js/Os.js"></script>
@@ -9,6 +9,38 @@
       <script type="text/javascript" src="js/Windows.js"></script>
       <script type="text/javascript" src="js/OsMaker.js"></script>
       <script>
+        function init() {
+          var myOs = createOs('Os');
+          var myLinux = createOs('Linux');
+          var myMac = createOs('Mac');
+          var myWindows = createOs('Windows');
+
+          var bootOsButton = document.getElementById('bootOs');
+          bootOsButton.os = myOs;
+          var bootLinuxButton = document.getElementById('bootLinux');
+          bootLinuxButton.os = myLinux;
+          var bootMacButton = document.getElementById('bootMac');
+          bootMacButton.os = myMac;
+          var bootWindowsButton = document.getElementById('bootWindows');
+          bootWindowsButton.os = myWindows;
+        }
+
+        function clickButton(id){
+          if (id === 'bootOs'){
+            var bootOsButton = document.getElementById('bootOs');
+          }
+          else if (id === 'bootLinux'){
+            var bootOsButton = document.getElementById('bootLinux');
+          }
+          else if (id === 'bootMac'){
+            var bootOsButton = document.getElementById('bootMac');
+          }
+          else if (id === 'bootWindows'){
+            var bootOsButton = document.getElementById('bootWindows');
+          }
+            bootOsButton.os.printMessage();
+        }
+
         jQuery(document).ready(function(){
           jQuery('#bootOs').on('click', function(event) {        
             jQuery('#osContent').toggle('show');
@@ -29,33 +61,33 @@
     <h1>Welcome to the OS booter!</h1>
 
     <div>
-      <button id='bootOs' onclick="createOs()">Boot Generic OS</button>
+      <button id='bootOs' onclick="clickButton(id)">Boot Generic OS</button>
       <div id='osContent' style="display: none;">
-        <button id='printOsMessage' onclick="printOsMessage()">Print Generic OS Slogan</button>
+        <button id='printOsMessage' onclick="clickButton()">Print Generic OS Slogan</button>
       </div>
     </div>
 
     <div>
-      <button id='bootLinux' onclick="createLinuxOs()">Boot Linux</button>
+      <button id='bootLinux' onclick="clickButton(id)">Boot Linux</button>
       <div id='linuxContent' style="display: none;">
-        <button id='printLinuxMessage' onclick="printLinuxMessage()">Print Linux Slogan</button>
-        <button id='printLinuxMascot' onclick="printLinuxMascot()">Print Linux Attribute</button>
+        <button id='printLinuxMessage' onclick="clickButton()">Print Linux Slogan</button>
+        <button id='printLinuxMascot' onclick="clickButton()">Print Linux Attribute</button>
       </div>
     </div>
 
     <div>
-      <button id='bootMac' onclick="createMacOs()">Boot Mac OS</button>
+      <button id='bootMac' onclick="clickButton(id)">Boot Mac OS</button>
       <div id='macContent' style="display: none;">
-        <button id='printMacMessage' onclick="printMacMessage()">Print Mac Slogan</button>
-        <button id='printMacProduct' onclick="printMacAttribute()">Print Mac Attribute</button>
+        <button id='printMacMessage' onclick="clickButton()">Print Mac Slogan</button>
+        <button id='printMacProduct' onclick="clickButton()">Print Mac Attribute</button>
       </div>
     </div>
     
     <div>
-      <button id="bootWindows" onclick="createWindowsOs()">Boot Windows</button>
+      <button id="bootWindows" onclick="clickButton(id)">Boot Windows</button>
       <div id='windowsContent' style="display: none;">
-        <button id="printWindowsMessage" onclick="printWindowsMessage()">Print Windows Slogan</button>
-        <button id="printTheBallmer" onclick="printWindowsStarPlayer()">Print Windows Attribute</button>
+        <button id="printWindowsMessage" onclick="clickButton()">Print Windows Slogan</button>
+        <button id="printTheBallmer" onclick="clickButton()">Print Windows Attribute</button>
       </div>
     </div>
   </body>
